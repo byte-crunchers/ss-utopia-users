@@ -23,7 +23,7 @@ pipeline {
         agent any
         steps {
           dir('user') {
-            sh 'mvn clean install'
+            sh 'mvn clean install -Dmave.test.skip'
           }
         }
       }  
