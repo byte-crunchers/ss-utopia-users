@@ -7,7 +7,7 @@ pipeline {
 
     environment {
       AWS_ACCOUNT_ID="422288715120"
-      AWS_DEFAULT_REGION="us-east-2" 
+      AWS_DEFAULT_REGION="us-east-1" 
       IMAGE_REPO_NAME="ss-utopia-users"
       IMAGE_TAG="latest"
       REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
@@ -20,7 +20,6 @@ pipeline {
         }
       }
       stage("Clean Install") {
-        agent any
         steps {
           dir('user') {
             sh 'mvn clean install -Dmaven.test.skip'
@@ -28,7 +27,6 @@ pipeline {
         }
       }  
       stage("SonarQube analysis") {
-        agent any
         steps {
           withSonarQubeEnv('SonarQube') {
             dir('user') {
@@ -55,7 +53,7 @@ pipeline {
       stage('Deploy') {
           steps {
             script{
-            docker.withRegistry("https://${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com", 'ecr:us-east-2:ss-AWS') 
+            docker.withRegistry("https://${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com", 'ecr:us-east-1:ss-AWS') 
             {
               docker.image('ss-utopia-users').push('latest')
             }
