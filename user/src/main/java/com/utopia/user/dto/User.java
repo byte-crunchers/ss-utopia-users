@@ -3,7 +3,7 @@ package com.utopia.user.dto;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users2")
 public class User {
      
     @Id
