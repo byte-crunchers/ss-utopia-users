@@ -18,14 +18,14 @@ public class UserDto {
 	private Long id;
 	private String username, first_name, last_name, email, street_address, city, us_state;
 	private Integer zip;
-	private Long phone, ssn;
+	private Long phone;
 	private LocalDate dob;
 	private Boolean is_admin, active, confirmed;
 	
 	private String full_name, full_address, phone_str, active_str, confirmed_str, admin_str, zip_str;
 	
 	public UserDto(Long id, String username, String first_name, String last_name, String email, String street_address,
-			String city, String us_state, Integer zip, Long phone, Long ssn, LocalDate dob, Boolean is_admin,
+			String city, String us_state, Integer zip, Long phone, LocalDate dob, Boolean is_admin,
 			Boolean active, Boolean confirmed) {
 		super();
 		this.id = id;
@@ -38,7 +38,6 @@ public class UserDto {
 		this.us_state = us_state;
 		this.zip = zip;
 		this.phone = phone;
-		this.ssn = ssn;
 		this.dob = dob;
 		this.is_admin = is_admin;
 		this.active = active;
