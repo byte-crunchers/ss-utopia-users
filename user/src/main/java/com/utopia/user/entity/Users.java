@@ -40,7 +40,7 @@ public class Users {
 
     private LocalDate dob;
 
-    private Long ssn;
+//  private Long ssn;  //ssn now has to be decrypted somehow
 
     private String email;
 

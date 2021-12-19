@@ -57,7 +57,6 @@ public class UserServiceImpl implements UserService{
 			u.setStreet_address(dto.getStreet_address());
 			u.setCity(dto.getCity());
 			u.setState(dto.getUs_state());
-			u.setSsn(dto.getSsn());
 			
 			//validate zipcode is 5 digits
 			if(dto.getZip() > 0 && dto.getZip() <= 99999)

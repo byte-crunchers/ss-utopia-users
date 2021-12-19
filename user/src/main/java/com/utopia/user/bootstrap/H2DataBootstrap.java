@@ -111,7 +111,7 @@ public class H2DataBootstrap implements CommandLineRunner {
                 .city("New York")
                 .state("NY")
                 .zip(2345)
-                .ssn(123456789L)
+//                .ssn(123456789L)
                 .dob(LocalDate.now().minusYears(20))
                 .phone(5556667777L)
                 .active(true)

@@ -15,7 +15,7 @@ public  interface UserRepository extends JpaRepository<Users, Long> {
     @Query(
             "select new com.utopia.user.dto.UserDto" +
                     "( u.id, u.username, u.first_name, u.last_name, u.email, u.street_address, u.city, u.state, "
-                    + "u.zip, u.phone, u.ssn, u.dob, u.is_admin, u.active, u.confirmed ) " +
+                    + "u.zip, u.phone, u.dob, u.is_admin, u.active, u.confirmed ) " +
                     "from Users u"
     )
     List<UserDto> getAllUsers();
@@ -24,7 +24,7 @@ public  interface UserRepository extends JpaRepository<Users, Long> {
     @Query(
             "select new com.utopia.user.dto.UserDto" +
                     "( u.id, u.username, u.first_name, u.last_name, u.email, u.street_address, u.city, u.state, "
-                    + "u.zip, u.phone, u.ssn, u.dob, u.is_admin, u.active, u.confirmed ) " +
+                    + "u.zip, u.phone, u.dob, u.is_admin, u.active, u.confirmed ) " +
                     "from Users u where u.id = ?1"
     )
     List<UserDto> getUserById(Long id);
